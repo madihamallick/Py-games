@@ -49,6 +49,8 @@ guessed = [] #to keep track of guessed words
 #colors
 white = (255,255,255)
 BLACK =(0,0,0)
+BLUE= (180, 219, 251)
+PINK= (232, 90, 202)
 
 #fonts
 LETTER_FONTS= pygame.font.SysFont('comicsans', 40) #-> font name, size
@@ -58,7 +60,7 @@ TITLE_FONTS = pygame.font.SysFont('comicsans', 70)
 
 
 def draw():
-  win.fill(white) #setting the bg color with rgb values (0-255) 
+  win.fill(BLUE) #setting the bg color with rgb values (0-255) 
 
   #draw title
   text = TITLE_FONTS.render("HANGMAN GAME", 1, BLACK)
@@ -81,7 +83,7 @@ def draw():
   for i in letters:
     x, y, ltr, visible = i #suppose i= [4,5] so x= 4 and y= 5, unpacking data
     if visible:
-      pygame.draw.circle(win, BLACK, (x, y) , radius, 3) #sayinh pygame to draw circle on win(window), color black, (x, y)-> center where draw the button, 3px-> radius for the circle 
+      pygame.draw.circle(win, BLACK, (x, y) , radius, 3) #saying pygame to draw circle on win(window), color black, (x, y)-> center where draw the button, 3px-> radius for the circle 
       text = LETTER_FONTS.render(ltr,1,BLACK) #using font we just created, we render the text on screen, 
       #ltr-> text you want to render, BLACK --> color you want to render with
       win.blit(text, (x - text.get_width()/2, y - text.get_height()/2) ) #what we want to draw(here text), where
@@ -94,7 +96,7 @@ def draw():
 #win/loose msg printing msg on screen
 def display_message(message):
   pygame.time.delay(1000)
-  win.fill(white)
+  win.fill(PINK)
   text = WORD_FONTS.render(message,1,BLACK)
   win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/2 - text.get_height()/2)) #printing the won msg right at the center
   pygame.display.update()
@@ -130,7 +132,8 @@ while run:
       #print(pos)  --> prints position of mouse
 
 
-  draw() #when we win/loose the msg displays, but the last letter added is not shown on screen, so to show, we redraw each time we click on screen, then check
+  draw() #when we win/loose the msg displays, but the last letter added is not shown on screen, so to show
+  #we redraw each time we click on screen, then check
 
 
       
@@ -151,4 +154,5 @@ while run:
 
 
 pygame.quit()
+
 
