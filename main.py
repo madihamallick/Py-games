@@ -41,7 +41,7 @@ for i in range(7):
 hangman_status = 0 #the hangman img will display accordingly
 list_of_words= ["abruptly","avenue","awkward","azure","galaxy","gossip","icebox","injury","ivory","ivy","jackpot","jaundice","joyful","juicy","jukebox","jumbo","kiwifruit","matrix","microwave","nightclub","nowadays","oxidize","oxygen","peekaboo","pixel","pneumonia","puppy","puzzling","queue","quizzes","quorum","rhythm","rickshaw","scratch","staff","strengths","stretch","subway","syndrome","thumbscrew","transcript","transplant","twelfth","unknown","unworthy","unzip","uptown","vodka","vortex","walkway","wave","wavy","whiskey","whizzing","wizard","wristwatch","xylophone","yachtsman", "youthful","yummy","zigzag" ,"zodiac" ,"zombie"]
 word = random.choice(list_of_words).upper()
-print(word)
+#print(word)
 guessed = [] #to keep track of guessed words
 
 
